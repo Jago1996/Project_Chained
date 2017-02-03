@@ -26,4 +26,5 @@ void AGameCharacter::Tick(float DeltaTime)
 void AGameCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	PlayerInputComponent->BindAxis("Ability 1", this, &AGameCharacter::Tick);
 }

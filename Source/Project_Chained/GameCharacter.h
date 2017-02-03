@@ -6,11 +6,17 @@
 #include "GameCharacter.generated.h"
 
 USTRUCT()
+struct FCharacterChar {
+	GENERATED_USTRUCT_BODY()
+
+	FString Test = "Test";
+};
+
+USTRUCT()
 struct FCharacterSpeed {
 	GENERATED_USTRUCT_BODY()
 
-		//Speed
-		UPROPERTY(VisibleAnywhere, Category = "Speed")
+	UPROPERTY(VisibleAnywhere, Category = "Speed")
 		float MaxSpeed = 0.f;
 	UPROPERTY(VisibleAnywhere, Category = "Speed")
 		float Acceleration = 0.f;
@@ -22,7 +28,7 @@ USTRUCT()
 struct FCharacterOffense {
 	GENERATED_USTRUCT_BODY()
 
-		UPROPERTY(VisibleAnywhere, Category = "Offense")
+	UPROPERTY(VisibleAnywhere, Category = "Offense")
 		float Power = 0.f;
 	UPROPERTY(VisibleAnywhere)
 		float Penetration = 0.f;
@@ -32,7 +38,7 @@ USTRUCT()
 struct FCharacterDefense {
 	GENERATED_USTRUCT_BODY()
 
-		UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere)
 		float Armor = 0.f;
 	UPROPERTY(VisibleAnywhere)
 		float Health = 0.f;
@@ -44,7 +50,7 @@ USTRUCT()
 struct FCharacterUtility {
 	GENERATED_USTRUCT_BODY()
 
-		UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere)
 		float Energy = 0.f;
 	UPROPERTY(VisibleAnywhere)
 		float EnergyRegen = 0.f;
@@ -55,7 +61,7 @@ struct FCharacterAbilities
 {
 	GENERATED_USTRUCT_BODY()
 
-		UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere)
 		FString Basic = "";
 	UPROPERTY(VisibleAnywhere)
 		float BasicRate = 0.f;
@@ -100,8 +106,9 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	//Stats for character
+	
 	UPROPERTY(EditAnywhere, Category = "CharacterStats")
-		FString CharacterClass = "";
+		FCharacterChar CharacterChar;
 
 	UPROPERTY(EditAnywhere, Category = "CharacterStats")
 		FCharacterSpeed CharacterStats;
