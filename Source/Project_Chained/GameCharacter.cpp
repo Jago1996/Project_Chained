@@ -14,6 +14,7 @@ AGameCharacter::AGameCharacter()
 void AGameCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	SetupInputComponent();
 }
 
 // Called every frame
@@ -22,9 +23,27 @@ void AGameCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-// Called to bind functionality to input
-void AGameCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+// Called to bind functionality to input 
+//TODO Add Movement
+void AGameCharacter::SetupInputComponent()
 {
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	PlayerInputComponent->BindAxis("Ability 1", this, &AGameCharacter::Tick);
+	InputComponent = FindComponentByClass<UInputComponent>();
+	if (InputComponent)
+	{
+		InputComponent->BindAction("Jump", IE_Pressed, this, &AGameCharacter::JumpPressed);
+		InputComponent->BindAction("Jump", IE_Released, this, &AGameCharacter::JumpReleased);
+		//InputComponent->BindAxis("MoveXAxis", this, &AGameCharacter::MoveX);
+		//InputComponent->BindAxis("MoveYAxis", this, &AGameCharacter::MoveY);
+	}
 }
+
+//TODO Jump works, but need to add functionality
+void AGameCharacter::JumpPressed()
+{
+	ACharacter::Jump();
+}
+void AGameCharacter::JumpReleased()
+{
+	ACharacter::StopJumping();
+}
+

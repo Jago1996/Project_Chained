@@ -103,7 +103,15 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	void SetupInputComponent() ;
+
+	void JumpPressed();
+
+	void JumpReleased();
+
+	void MoveX(float posX);
+
+	void MoveY(float posY);
 
 	//Stats for character
 	
@@ -124,4 +132,6 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "CharacterStats")
 		FCharacterAbilities CharacterAbilities;
+
+	UInputComponent* InputComponent = nullptr;
 };
