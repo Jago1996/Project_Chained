@@ -5,21 +5,21 @@ using System.Collections.Generic;
 
 public class Project_ChainedTarget : TargetRules
 {
-	public Project_ChainedTarget(TargetInfo Target)
-	{
-		Type = TargetType.Game;
-	}
+    public Project_ChainedTarget(TargetInfo Target)
+    {
+        Type = TargetType.Game;
+    }
 
-	//
-	// TargetRules interface.
-	//
+    //
+    // TargetRules interface.
+    //
 
-	public override void SetupBinaries(
-		TargetInfo Target,
-		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
-		ref List<string> OutExtraModuleNames
-		)
-	{
-		OutExtraModuleNames.AddRange( new string[] { "Project_Chained" } );
-	}
+    public override void SetupBinaries(
+        TargetInfo Target,
+        ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
+        ref List<string> OutExtraModuleNames
+        )
+    {
+        OutExtraModuleNames.AddRange(new string[] { "Project_Chained" });
+    }
 }

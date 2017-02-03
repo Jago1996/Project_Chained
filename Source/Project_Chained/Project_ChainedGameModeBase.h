@@ -6,14 +6,10 @@
 #include "Project_ChainedGameModeBase.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class PROJECT_CHAINED_API AProject_ChainedGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
-	
-	
-	
 };

@@ -2,4 +2,4 @@
 
 #include "Project_Chained.h"
 
-IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, Project_Chained, "Project_Chained" );
+IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, Project_Chained, "Project_Chained");
