@@ -56,7 +56,7 @@ struct FCharacterUtility {
 		float EnergyRegen = 0.f;
 };
 
-USTRUCT()
+USTRUCT() 
 struct FCharacterAbilities
 {
 	GENERATED_USTRUCT_BODY()
@@ -103,18 +103,31 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 	// Called to bind functionality to input
-	void SetupInputComponent() ;
+	void SetupPlayerInputComponent(UInputComponent * InputComponent);
 
 	void JumpPressed();
-
 	void JumpReleased();
 
-	void MoveX(float posX);
+	void BasicAttackPressed();
+	void BasicAttackReleased();
 
-	void MoveY(float posY);
+	void Ability1Pressed();
+	void Ability1Released();
+
+	void Ability2Pressed();
+	void Ability2Released();
+
+	void Ability3Pressed();
+	void Ability3Released();
+
+	void AbilityUltimatePressed();
+	void AbilityUltimateReleased();
+
+
+	void MoveX(float xPos);
+	void MoveY(float yPos);
 
 	//Stats for character
-	
 	UPROPERTY(EditAnywhere, Category = "CharacterStats")
 		FCharacterChar CharacterChar;
 
@@ -132,6 +145,4 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "CharacterStats")
 		FCharacterAbilities CharacterAbilities;
-
-	UInputComponent* InputComponent = nullptr;
 };

@@ -21,6 +21,10 @@ public:
 	// Called every frame
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
-		
+	void BasicAttack();
+	void Ability1();
+	void Ability2();
+	void Ability3();
+	void AbilityUltimate();
 	
 };

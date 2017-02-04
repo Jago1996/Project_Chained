@@ -10,8 +10,6 @@ UCharacterAbilitiesComponent::UCharacterAbilitiesComponent()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 
 
@@ -19,9 +17,6 @@ UCharacterAbilitiesComponent::UCharacterAbilitiesComponent()
 void UCharacterAbilitiesComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
-	
 }
 
 
@@ -29,7 +24,26 @@ void UCharacterAbilitiesComponent::BeginPlay()
 void UCharacterAbilitiesComponent::TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction )
 {
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
+}
 
-	// ...
+void UCharacterAbilitiesComponent::BasicAttack()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
+}
+
+void UCharacterAbilitiesComponent::Ability1()
+{
+}
+
+void UCharacterAbilitiesComponent::Ability2()
+{
+}
+
+void UCharacterAbilitiesComponent::Ability3()
+{
+}
+
+void UCharacterAbilitiesComponent::AbilityUltimate()
+{
 }
 
