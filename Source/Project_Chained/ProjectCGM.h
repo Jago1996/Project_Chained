@@ -3,12 +3,17 @@
 #pragma once
 
 #include "GameFramework/GameModeBase.h"
-#include "Project_ChainedGameModeBase.generated.h"
+#include "ProjectCGM.generated.h"
 
+/**
+ * 
+ */
 UCLASS()
-class PROJECT_CHAINED_API AProject_ChainedGameModeBase : public AGameModeBase
+class PROJECT_CHAINED_API AProjectCGM : public AGameModeBase
 {
 	GENERATED_BODY()
-
-	AProject_ChainedGameModeBase();
+	
+	
+	
+	
 };
