@@ -13,7 +13,8 @@ class PROJECT_CHAINED_API AProjectCGM : public AGameModeBase
 {
 	GENERATED_BODY()
 	
-	
+public:
+	AProjectCGM();
 	
 	
 };

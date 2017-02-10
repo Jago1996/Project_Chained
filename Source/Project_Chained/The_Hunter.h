@@ -5,6 +5,8 @@
 #include "GameFramework/Character.h"
 #include "The_Hunter.generated.h"
 
+class UProjectileShoot;
+
 UCLASS()
 class PROJECT_CHAINED_API AThe_Hunter : public ACharacter
 {
@@ -23,6 +25,21 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
-	
+	void JumpPressed();
+	void JumpReleased();
+	void MoveX(float xPos);
+	void MoveY(float yPos);
+
+	void BasicAttackPressed();
+	void BasicAttackReleased();
+	void Ability1Pressed();
+	void Ability1Released();
+	void Ability2Pressed();
+	void Ability2Released();
+	void Ability3Pressed();
+	void Ability3Released();
+	void AbilityUltimatePressed();
+	void AbilityUltimateReleased();
+
+	UProjectileShoot* ProjectileShoot;
 };
