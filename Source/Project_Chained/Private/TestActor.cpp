@@ -9,7 +9,7 @@ ATestActor::ATestActor()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> Mesh(TEXT("/Game/deagle"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> Mesh(TEXT("/Game/cube"));
 	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	MeshComponent->SetStaticMesh(Mesh.Object);
 

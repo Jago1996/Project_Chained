@@ -25,5 +25,5 @@ public:
 	void Shoot();
 private:
 	ATestActor* TestActor = nullptr;
-	TSubclassOf<ATestActor> actorTemplate;
+
 };

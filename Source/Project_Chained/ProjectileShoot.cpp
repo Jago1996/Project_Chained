@@ -29,10 +29,11 @@ void UProjectileShoot::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 
 void UProjectileShoot::Shoot() 
 {
+
 	UWorld* const World = GetWorld();
 	if (World)
 	{
-		const FVector& Location = GetOwner()->GetActorLocation();
+		const FVector& Location = GetOwner()->GetActorLocation() + FVector(0, 0, 2);
 		const FActorSpawnParameters& SpawnParameters = FActorSpawnParameters();
 		const FRotator& Rotation = FRotator();
 		GetWorld()->SpawnActor<ATestActor>(ATestActor::StaticClass(), Location, Rotation, SpawnParameters);
