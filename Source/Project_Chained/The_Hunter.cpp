@@ -1,15 +1,16 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Project_Chained.h"
-#include "The_Hunter.h"
 #include "ProjectileShoot.h"
+#include "The_Hunter.h"
+
 
 // Sets default values
 AThe_Hunter::AThe_Hunter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	CreateDefaultSubobject<UActorComponent>(FName("ProjectileShoot"));
+	ProjectileShoot = CreateDefaultSubobject<UProjectileShoot>(FName("ProjectileShoot"));
 }
 
 // Called when the game starts or when spawned
@@ -89,8 +90,7 @@ void AThe_Hunter::MoveY(float yPos)
 
 void AThe_Hunter::BasicAttackPressed()
 {
-	
-
+	ProjectileShoot->Shoot();
 }
 void AThe_Hunter::BasicAttackReleased()
 {

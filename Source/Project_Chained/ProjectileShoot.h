@@ -5,6 +5,7 @@
 #include "Components/ActorComponent.h"
 #include "ProjectileShoot.generated.h"
 
+class ATestActor;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class PROJECT_CHAINED_API UProjectileShoot : public UActorComponent
@@ -21,4 +22,8 @@ public:
 	// Called every frame
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
+	void Shoot();
+private:
+	ATestActor* TestActor = nullptr;
+	TSubclassOf<ATestActor> actorTemplate;
 };
